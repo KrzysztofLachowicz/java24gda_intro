@@ -28,19 +28,7 @@ public class Tasks {
      * Metoda powinna zwrócić stworzoną kolekcję.
      */
     private static Set<Double> setOfDoubles() {
-        Set<Double> doubles = new HashSet<>();
-        doubles.add(1.1);
-        doubles.add(.07);
-        doubles.add(null);
-        doubles.add(1.5);
-        doubles.add(3.7);
-        doubles.add(null);
-
-        for (Double aDouble : doubles) {
-            System.out.println(aDouble);
-        }
-
-        return doubles;
+        return null;
     }
 
     /**
@@ -50,19 +38,7 @@ public class Tasks {
      * Metoda powinna zwrócić stworzoną mapę.
      */
     private static Map<Integer, String> genericMap() {
-        Map<Integer, String> map = new HashMap<>();
-        map.put(1, "Jeden");
-        map.put(5, "Pięć");
-        map.put(10, "Dziesięć");
-
-        String fiveStr = map.get(5);
-        System.out.println("map.get(5) = " + fiveStr);
-
-        for (Integer key : map.keySet()) {
-            System.out.println(key + " = " + map.get(key));
-        }
-
-        return map;
+        return null;
     }
 
     /**
@@ -71,14 +47,7 @@ public class Tasks {
      * Zwróć nową listę jako wynik metody.
      */
     private static List<Number> doublesToNumbers(Set<Double> doubles) {
-        List<Number> numbers = new ArrayList<>();
-        for (Double aDouble : doubles) {
-            if(aDouble != null) {
-                numbers.add(aDouble);
-            }
-        }
-
-        return numbers;
+        return null;
     }
 
     /**
@@ -92,13 +61,7 @@ public class Tasks {
      * Zwróć obiekt klasy NumbersBox jako wynik tej metody.
      */
     private static NumbersBox numbersToNumbersBox(List<Number> numbers) {
-        NumbersBox numbersBox = new NumbersBox(numbers);
-        System.out.println("numbersBox.isEmpty() = " + numbersBox.isEmpty());
-        System.out.println("numbersBox.getFirstNumber() = " + numbersBox.getFirstNumber());
-        System.out.println("numbersBox.getFirstNumberAsInt() = " + numbersBox.getFirstNumberAsInt());
-        System.out.println("numbersBox.getLastNumber() = " + numbersBox.getLastNumber());
-        System.out.println("numbersBox.getLastNumberAsInt() = " + numbersBox.getLastNumberAsInt());
-        return numbersBox;
+        return null;
     }
 
     /**
@@ -106,16 +69,6 @@ public class Tasks {
      * Zwróć obiekt klasy NumbersBox jako wynik tej metody.
      */
     private static NumbersBox<Double> boxOfDoubles(Set<Double> doubles) {
-        List<Double> listOfDoubles = new ArrayList<>(doubles);
-        NumbersBox<Double> boxOfDoubles = new NumbersBox<>(listOfDoubles);
-        System.out.println("numbersBox.isEmpty() = " + boxOfDoubles.isEmpty());
-        Double firstNumber = boxOfDoubles.getFirstNumber();
-        System.out.println("numbersBox.getFirstNumber() = " + firstNumber);
-        System.out.println("numbersBox.getFirstNumberAsInt() = " + boxOfDoubles.getFirstNumberAsInt());
-        Double lastNumber = boxOfDoubles.getLastNumber();
-        System.out.println("numbersBox.getLastNumber() = " + lastNumber);
-        System.out.println("numbersBox.getLastNumberAsInt() = " + boxOfDoubles.getLastNumberAsInt());
-
-        return boxOfDoubles;
+        return null;
     }
 }
