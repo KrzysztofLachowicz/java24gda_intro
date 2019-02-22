@@ -29,7 +29,6 @@ public class IfStatements {
             System.out.println("c <= d");
         }
 
-
         if (a + 1 > d / 3) { //operatory relacyjne mają niższy priorytet od arytmetycznych, nie musimy pisać: if((a + 1) > (d / 3))
             System.out.println("a + 1 > d / 3");
         } else {
