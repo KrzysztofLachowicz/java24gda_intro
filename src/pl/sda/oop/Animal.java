@@ -52,4 +52,16 @@ public class Animal {
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "genre='" + genre + '\'' +
+                ", color='" + color + '\'' +
+                ", age=" + age +
+                ", numberOfLegs=" + numberOfLegs +
+                ", sex='" + sex + '\'' +
+                ", isMoving=" + isMoving +
+                '}';
+    }
 }
