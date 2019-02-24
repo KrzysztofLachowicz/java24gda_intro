@@ -43,13 +43,17 @@ public class Car {
         System.out.println("Car was started!");
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", color='" + color + '\'' +
-                ", speed=" + speed +
-                ", isMoving=" + isMoving +
-                '}';
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Car{" +
+//                "brand='" + brand + '\'' +
+//                ", color='" + color + '\'' +
+//                ", speed=" + speed +
+//                ", isMoving=" + isMoving +
+//                '}';
+//    }
 }
