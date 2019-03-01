@@ -28,10 +28,26 @@ public class StringExamples {
     }
 
     private static void stringEquals() {
-        String s1 = "Hello World!";
-        String s2 = new String("Hello World!");
-        System.out.println(s1 == s2);
-        System.out.println(s1.equals(s2));
+        String s1_1 = "Hello World!";
+        String s2_1 = new String("Hello World!");
+        System.out.println(s1_1 == s2_1);
+        System.out.println(s1_1.equals(s2_1));
+
+        System.out.println("-----------------");
+
+        //string pool
+        String s1_2 = "John Wayne";
+        String s2_2 = "John Wayne";
+        System.out.println(s1_2 == s2_2);
+        System.out.println(s1_2.equals(s2_2));
+        System.out.println("-----------------");
+
+        //string pool + metoda intern()
+        String s1_3 = "John Wayne";
+        String s2_3 = new String("John Wayne");
+        s2_3 = s2_3.intern();
+        System.out.println(s1_3 == s2_3);
+        System.out.println(s1_3.equals(s2_3));
     }
 
     private static void numberVsString() {
