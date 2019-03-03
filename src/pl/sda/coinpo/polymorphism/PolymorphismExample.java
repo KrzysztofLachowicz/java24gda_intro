@@ -7,8 +7,8 @@ import pl.sda.coinpo.shapes.Square;
 public class PolymorphismExample {
     public static void main(String[] args) {
         Square square = new Square(10);
-        Object objectFromSquare = square;
         Shape shapeFromSquare = square;
+        Object objectFromSquare = square;
 
         System.out.println(square.getType());
         System.out.println(shapeFromSquare.getType());

@@ -6,7 +6,7 @@ public class EnumExample {
         // iteracja po wszystkich elementach/wartościach enuma
 
         // analogiczna pętla for (;;)
-//        for (int i = 0; i < 7; i++) {
+//        for (int i = 0; i < Days.values().length; i++) {
 //            Days element = Days.get(i);
 //        }
 

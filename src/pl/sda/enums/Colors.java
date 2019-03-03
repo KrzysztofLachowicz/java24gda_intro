@@ -1,7 +1,6 @@
 package pl.sda.enums;
 
 public enum Colors {
-
     // wartości enuma `Colors`
     RED(255, 0, 0),
     WHITE(255, 255, 255),
@@ -11,14 +10,6 @@ public enum Colors {
     private int redColor;
     private int greenColor;
     private int blueColor;
-
-//    public void setRedColor(int value) {
-//        if (value < 0 || value > 255) {
-//            System.out.println("Error!");
-//        } else {
-//            redColor = value;
-//        }
-//    }
 
     // konstruktor enuma
     Colors(int redColor, int greenColor, int blueColor) {
