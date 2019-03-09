@@ -11,7 +11,7 @@ import java.util.TimeZone;
 public class DateAndCalendarExamples {
     public static void main(String[] args) {
         // #1
-        date();
+        //date();
 
         // #2
         //calendar();
@@ -20,7 +20,7 @@ public class DateAndCalendarExamples {
         //dateToCalendar();
 
         // #4
-        //dateTimeFormat();
+        dateTimeFormat();
     }
 
     private static void date() {
@@ -70,7 +70,7 @@ public class DateAndCalendarExamples {
     }
 
     private static void dateTimeFormat() {
-        SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         Date now = new Date();
         String dateAsString = dateTimeFormat.format(now);

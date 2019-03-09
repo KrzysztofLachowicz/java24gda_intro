@@ -1,24 +1,22 @@
 package pl.sda.coinpo.inheritance;
 
 public class Animal {
-    private String name;
+    protected String name;
     private int age;
-
-    public Animal(String name) { // 1
-        this(name, 10);     // 2
-//        this.name = name;
-//        this.age = 10;
-        System.out.println("Animal was created!"); // 7
-    } // 8
 
     public Animal(String name, int age) { // 3
         this.name = name; // 4
         this.age = age;   // 5
     } // 6
 
-    //    public Animal(String name) {
-//        this.name = name;
-//    }
+    public Animal(String name) { // 1
+        this(name, 10);     // 2
+        System.out.println("Animal was created!"); // 7
+    } // 8
+
+    public Animal() {
+        this("Animal X");
+    }
 
     protected String getName() {
         return name;

@@ -17,7 +17,7 @@ public class ZoneDataAndTimeExamples {
         System.out.println("ZonedDateTime.withZoneSameInstant(Hongkong): " + zonedDateTime.withZoneSameInstant(ZoneId.of("Hongkong")));
         System.out.println("ZonedDateTimeParse: " + ZonedDateTime.parse("2017-09-30T10:15:30+02:00[Europe/Warsaw]"));
 
-        ZoneOffset zoneOffset = ZoneOffset.of("+02:00");
+        ZoneOffset zoneOffset = ZoneOffset.of("+18:00");
         System.out.println("ZoneOffset: " + zoneOffset);
 
         OffsetDateTime offSetByTwo = OffsetDateTime.of(localDateTime, zoneOffset);

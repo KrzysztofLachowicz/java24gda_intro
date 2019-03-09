@@ -6,17 +6,17 @@ import java.time.temporal.ChronoUnit;
 public class PeriodAndDurationExamples {
     public static void main(String[] args) {
         // #1
-        period();
+        //period();
 
         // #2
-        //duration();
+        duration();
     }
 
     private static void period() {
         LocalDate initialDate  = LocalDate.parse("2017-09-30");
         LocalDate finalDate = LocalDate.parse("2018-10-01");
         Period period = Period.between(finalDate, initialDate);
-        System.out.println("Period: " + period); //
+        System.out.println("Period: " + period);
 
         System.out.println("PeriodInitialDate: " + initialDate.getDayOfWeek());
 
@@ -36,7 +36,7 @@ public class PeriodAndDurationExamples {
         LocalTime initialTime = LocalTime.of(6, 30, 0);
         LocalTime finalTime = LocalTime.of(15, 30, 0);
         Duration duration = Duration.between(finalTime, initialTime);
-        System.out.println("Duration: " + duration);//P-1Y-1D
+        System.out.println("Duration: " + duration);
 
         System.out.println("DurationInitialTime: " + initialTime);
 
