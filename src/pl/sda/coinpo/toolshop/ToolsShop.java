@@ -12,7 +12,7 @@ public class ToolsShop {
         Tool[] tools = {hammer1, hammer2, hammer3, saw1, saw2};
         for (int i = 0; i < tools.length; i++) {
             Tool tool = tools[i];
-            System.out.println(tool);
+            System.out.println(tool.description());
         }
     }
 }

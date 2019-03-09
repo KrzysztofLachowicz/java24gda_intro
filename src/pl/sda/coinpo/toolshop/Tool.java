@@ -24,4 +24,8 @@ public class Tool {
                 ", price=" + price +
                 '}';
     }
+
+    public String description(){
+        return "Tool " + model + " cena: " + price;
+    }
 }

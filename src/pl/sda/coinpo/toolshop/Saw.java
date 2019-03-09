@@ -7,4 +7,9 @@ public class Saw extends Tool {
         super(model, price);
         this.length = length;
     }
+
+    @Override
+    public String description(){
+        return super.description() + " saw length: " + length;
+    }
 }

@@ -7,4 +7,8 @@ public class Hammer extends Tool {
         super(model, price);
         this.weight = weight;
     }
+
+    public String description(){
+        return super.description() + " hammer weight: " + weight;
+    }
 }
