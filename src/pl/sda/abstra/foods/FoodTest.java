@@ -2,14 +2,14 @@ package pl.sda.abstra.foods;
 
 public class FoodTest {
     public static void main(String[] args) {
-        Food chicken = new Chicken();
-        Food ham = new Ham();
-        Food carrot = new Carrot();
-        Food salad = new Salad();
+        Food chicken = new Chicken("Kurczak");
+        Food ham = new Ham("Szynka");
+        Food carrot = new Carrot("Marchew");
+        Food salad = new Salad("Sałata");
 
-        System.out.println("chicken = " + chicken.getTaste());
-        System.out.println("ham = " + ham.getTaste());
-        System.out.println("carrot = " + carrot.getTaste());
-        System.out.println("salad = " + salad.getTaste());
+        Food[] foods = {chicken, ham, carrot, salad};
+        for(Food food: foods) {
+            System.out.println(food.getName() + " = " + food.getTaste()+ ", type: " + food.getType());
+        }
     }
 }
