@@ -1,18 +1,22 @@
 package pl.sda.stat;
 
 public class ExternalClass {
+    public ExternalClass() {
+        InnerNormalClass innerNormalClass = new InnerNormalClass();
+    }
+
     public static void callCounter() {
         System.out.println("Counter from external class: ");
         System.out.println(Counter.get());
     }
 
     public static class InnerStaticClass {
-        public InnerStaticClass() {
+        InnerStaticClass() {
             System.out.println("InnerStaticClass");
         }
     }
 
-    protected class InnerNormalClass {
+    public class InnerNormalClass {
         InnerNormalClass() {
             System.out.println("InnerNormalClass");
         }

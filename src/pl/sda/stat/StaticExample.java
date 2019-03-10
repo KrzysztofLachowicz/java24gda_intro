@@ -23,11 +23,12 @@ public class StaticExample {
         InternalClass.callCounter();
 
         new ExternalClass.InnerStaticClass();
-        new ExternalClass().new InnerNormalClass();
+        ExternalClass externalClass = new ExternalClass();
+        ExternalClass.InnerNormalClass innerNormalClass = externalClass.new InnerNormalClass();
     }
 
-    static class InternalClass {
-        static void callCounter() {
+    public static class InternalClass {
+        public static void callCounter() {
             System.out.println("Counter from internal class: ");
             System.out.println(Counter.get());
         }

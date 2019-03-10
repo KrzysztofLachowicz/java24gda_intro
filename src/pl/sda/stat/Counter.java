@@ -5,7 +5,6 @@ public class Counter {
     private static long counter = 0;
 
     public static long get() {
-        ++counter;
-        return counter;
+        return ++counter;
     }
 }
