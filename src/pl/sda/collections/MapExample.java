@@ -52,7 +52,13 @@ public class MapExample {
             System.out.println(carBrand + " -> " + car);
         }
 
+        System.out.println("\nMap contains >>>");
+        System.out.println("cars.containsKey(renault) = " + cars.containsKey(renault));
+        System.out.println("cars.containsValue(teslaModelS) = " + cars.containsValue(teslaModelS));
         cars.remove(renault);
+        System.out.println("cars.containsKey(renault) = " + cars.containsKey(renault));
+        System.out.println("cars.containsValue(teslaModelS) = " + cars.containsValue(teslaModelS));
+
         System.out.println("\nMap after removal >>>");
         for (CarBrand brand : cars.keySet()) {
             Car car = cars.get(brand);
