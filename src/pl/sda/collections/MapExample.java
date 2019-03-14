@@ -32,7 +32,8 @@ public class MapExample {
         Set<CarBrand> carBrands = cars.keySet();
         System.out.println("\nPrinting all keys in map >>>");
         for (CarBrand brand : carBrands) {
-            System.out.println(brand);
+            Car car = cars.get(brand);
+            System.out.println(brand + " - " + car);
         }
 
         // iteracja po wartosciach
@@ -49,6 +50,13 @@ public class MapExample {
             CarBrand carBrand = entry.getKey();
             Car car = entry.getValue();
             System.out.println(carBrand + " -> " + car);
+        }
+
+        cars.remove(renault);
+        System.out.println("\nMap after removal >>>");
+        for (CarBrand brand : cars.keySet()) {
+            Car car = cars.get(brand);
+            System.out.println(brand + " - " + car);
         }
     }
 }
