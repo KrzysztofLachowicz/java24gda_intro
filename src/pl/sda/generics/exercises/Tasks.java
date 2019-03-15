@@ -51,8 +51,8 @@ public class Tasks {
     }
 
     /**
-     * 4. Stwórz klasę (zwykłą lub wewnętrzną) która będzie przechowywać listę obiektów klasy Number.
-     * Dodaje metody które:
+     * 4. Uzupełnij klasę NumbersBox która ma przechowywać listę obiektów klasy Number.
+     * Dodaj metody które:
      * - sprawdzą czy lista jest pusta
      * - pobierze pierwszy element listy
      * - pobierze pierwszy element listy jako int
