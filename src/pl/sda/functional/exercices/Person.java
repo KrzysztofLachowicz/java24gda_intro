@@ -1,8 +1,8 @@
 package pl.sda.functional.exercices;
 
 public class Person {
-    int age;
-    String name;
+    private int age;
+    private String name;
 
     public Person(int age, String name) {
         this.age = age;

@@ -5,10 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.function.BiConsumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
@@ -18,7 +15,7 @@ public class Samples {
     public static void main(String[] args) {
         //#1
         //tworzenie i wykorzystywanie obiektów klasy Optional
-        //optionals();
+        optionals();
 
         //#2
         //tworzenie i wykorzystywanie Lambd
@@ -83,6 +80,19 @@ public class Samples {
         System.out.println("intToStr3.apply(44) = " + intToStr3.apply(13));
 
         //**********
+        // Consumer
+        Consumer<Integer> integerConsumer1 = (Integer n) -> {
+            System.out.println(n * n);
+        };
+        System.out.println("integerConsumer1.accept()");
+        integerConsumer1.accept(10);
+
+        //to samo co wyżej tylko krócej
+        Consumer<Integer> integerConsumer2 = (Integer n) -> System.out.println(n * n);
+        System.out.println("integerConsumer2.accept()");
+        integerConsumer2.accept(10);
+
+        //**********
         // Supplier
         Supplier<Integer> integerSupplier1 = () -> {
             return 10;
@@ -134,7 +144,12 @@ public class Samples {
         System.out.println("------------------------");
         //**********
         // Klasa Stream
-        Stream<Person> persons = Stream.of(new Person(20, "Ania"), new Person(31, "Łukasz"), new Person(24, "Feliks"), new Person(8, "Paweł"));
+        Stream<Person> persons = Stream.of(
+                new Person(20, "Ania"),
+                new Person(31, "Łukasz"),
+                new Person(24, "Feliks"),
+                new Person(8, "Paweł")
+        );
         persons.forEach(System.out::println);
 
         System.out.println("------------------------");
