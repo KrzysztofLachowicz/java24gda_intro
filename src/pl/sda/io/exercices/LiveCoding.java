@@ -1,6 +1,6 @@
 package pl.sda.io.exercices;
 
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -61,6 +61,38 @@ public class LiveCoding {
             for (Path path1 : pathList) {
                 System.out.println("path = " + path1.toAbsolutePath());
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //zapisujemy tekst do pliku
+        try(FileWriter fileWriter = new FileWriter(path.toString())) {
+            fileWriter.write("Ala ma kota!\n");
+            fileWriter.write("Ala ma kota!\n");
+            fileWriter.write("Ala ma kota!\n");
+            fileWriter.write("Ala ma kota!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        PrintStream out = System.out;
+        try(PrintWriter printWriter = new PrintWriter(path.toString())) {
+            printWriter.println("Justyna ma wiewiórkę");
+            printWriter.printf("%10s|%10.2f|%10s%n", "Janusz", 10.6677, "Manager");
+            printWriter.printf("%10s|%10.2f|%10s%n", "Agnieszka", 10.6677, "Specjalista");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("-------------------------------");
+        System.out.println(path.toString());
+        try(FileReader fileReader = new FileReader(path.toString())) {
+            int read;
+            while((read = fileReader.read()) != -1) {
+                char character = (char) read;
+                System.out.print(character);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
