@@ -1,7 +1,20 @@
 package pl.sda.generics.boxes;
 
 public abstract class Fruit {
-    public void isRotten() {
-        System.out.println("Is this fruit rotten?");
+    private boolean rotten;
+
+    protected Fruit(boolean rotten) {
+        this.rotten = rotten;
+    }
+
+    public boolean isRotten() {
+        return rotten;
+    }
+
+    @Override
+    public String toString() {
+        return "Fruit{" +
+                "rotten=" + rotten +
+                '}' + getClass().getSimpleName();
     }
 }
