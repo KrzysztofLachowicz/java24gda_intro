@@ -12,11 +12,11 @@ public class Tasks {
         //Map<Integer, String> genericMap = genericMap();
 
         //#3
-        //List<Number> numbers = doublesToNumbers(doubles);
-        //System.out.println("numbers = " + numbers);
+        List<Number> numbers = doublesToNumbers(doubles);
+        System.out.println("numbers = " + numbers);
 
         //#4
-        //NumbersBox numbersBox = numbersToNumbersBox(numbers);
+        NumbersBox numbersBox = numbersToNumbersBox(numbers);
 
         //#5
         //NumbersBox<Double> doubleNumbersBox = boxOfDoubles(doubles);
@@ -28,7 +28,17 @@ public class Tasks {
      * Metoda powinna zwrócić stworzoną kolekcję.
      */
     private static Set<Double> setOfDoubles() {
-        return null;
+        Set<Double> doubleSet = new HashSet<>();
+        doubleSet.add(1.2);
+        doubleSet.add(.2);
+        doubleSet.add(null);
+        doubleSet.add(4.2);
+
+        for (Double aDouble : doubleSet) {
+            System.out.println(aDouble);
+        }
+
+        return doubleSet;
     }
 
     /**
@@ -38,7 +48,14 @@ public class Tasks {
      * Metoda powinna zwrócić stworzoną mapę.
      */
     private static Map<Integer, String> genericMap() {
-        return null;
+        Map<Integer,String> sampleMap = new HashMap<>();
+        sampleMap.put(1, "one");
+        sampleMap.put(2, "two");
+        sampleMap.put(3, "three");
+        for (Integer key : sampleMap.keySet()) {
+            System.out.println(key + " " +sampleMap.get(key));
+        }
+        return sampleMap;
     }
 
     /**
@@ -47,12 +64,18 @@ public class Tasks {
      * Zwróć nową listę jako wynik metody.
      */
     private static List<Number> doublesToNumbers(Set<Double> doubles) {
-        return null;
+        List<Number> list = new ArrayList<>();
+        for (Double aDouble : doubles) {
+            if (aDouble!=null){
+                list.add(aDouble);
+            }
+        }
+        return list;
     }
 
     /**
      * 4. Uzupełnij klasę NumbersBox która ma przechowywać listę obiektów klasy Number.
-     * Dodaj metody które:
+     * Dodaj metody do klasy NumbersBox które:
      * - sprawdzą czy lista jest pusta
      * - pobierze pierwszy element listy
      * - pobierze pierwszy element listy jako int
@@ -61,7 +84,14 @@ public class Tasks {
      * Zwróć obiekt klasy NumbersBox jako wynik tej metody.
      */
     private static NumbersBox numbersToNumbersBox(List<Number> numbers) {
-        return null;
+        NumbersBox<Number> numbersBox = new NumbersBox<>(numbers);
+        System.out.println("numbersBox is empty = " + numbersBox.isEmpty());
+        System.out.println("numbersBox first element = " + numbersBox.getFirstElement());
+        System.out.println("numbersBox first element as int = " + numbersBox.getFirstElementAsInt());
+        System.out.println("numbersBox last element = " + numbersBox.getLastElement());
+        System.out.println("numbersBox last element as int = " + numbersBox.getLastElementAsInt());
+
+        return numbersBox;
     }
 
     /**
