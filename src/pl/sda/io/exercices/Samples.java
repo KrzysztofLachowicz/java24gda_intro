@@ -10,13 +10,13 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Samples {
-    private static final String BASE_FOLDER_PATH = "C:\\workspace\\io_test";
+    private static final String BASE_FOLDER_PATH = "C:\\io_test";
     private static final Path BASE_PATH = Paths.get(BASE_FOLDER_PATH);
 
     public static void main(String[] args) {
         //#1
         //tworzenie ścieżek do plików i katalogów
-        //createPaths();
+        createPaths();
 
         //#2
         //tworzenie katalogów i plików
@@ -40,15 +40,11 @@ public class Samples {
 
         //#7
         //piszemy i czytamy ze strumienia bajtów
-        writeAndReadWithBytesStreams();
+        //writeAndReadWithBytesStreams();
 
         //#8
         //analiza IO wystawionego przez klasę System + poznanie klasy Scanner
         //systemIOAndScanner();
-    }
-
-    private static void writeObjectsToFile() {
-
     }
 
     private static void createPaths() {
@@ -66,12 +62,16 @@ public class Samples {
         System.out.println("basePath: " + basePath);
 
         //jak nie chcemy używać wprost seperatorów katalogów
-        basePath = Paths.get("C:", "workspace", "io_test");
+        basePath = Paths.get("C:", "io_test");
         System.out.println("basePath: " + basePath);
 
         //tworzymy ścieżkę na podstawie innej ścieżki
         Path pathToFile = basePath.resolve("test1.txt");
         System.out.println("pathToFile: " + pathToFile);
+
+        pathToFile = pathToFile.resolveSibling("test2.txt");
+        System.out.println("pathToFile: " + pathToFile);
+
         Path pathToSubFolder = basePath.resolve("subfolder");
         System.out.println("pathToSubFolder: " + pathToSubFolder);
 

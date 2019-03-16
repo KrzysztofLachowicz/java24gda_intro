@@ -1,11 +1,6 @@
 package pl.sda.io.exercices;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 public class Tasks {
-    private static final Path TEST_FOLDER = Paths.get("C:/workspace/io_test");
-
     public static void main(String[] args) {
         //#1
         createTestFolders();
