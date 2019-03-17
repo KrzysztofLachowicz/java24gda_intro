@@ -15,11 +15,11 @@ public class Samples {
     public static void main(String[] args) {
         //#1
         //tworzenie i wykorzystywanie obiektów klasy Optional
-        optionals();
+//        optionals();
 
         //#2
         //tworzenie i wykorzystywanie Lambd
-        //lambdas();
+        lambdas();
 
         //#3
         //przegląd źródeł dla strumieni danych
@@ -72,7 +72,7 @@ public class Samples {
         System.out.println("intToStr.apply(103) = " + intToStr.apply(103));
 
         //to samo co wyżej tylko krócej - wyrażenie lambda
-        Function<Integer, String> intToStr2 = (number) -> String.valueOf(number);
+        Function<Integer, String> intToStr2 = (number) -> "Moja liczba: " + number;
         System.out.println("intToStr2.apply(44) = " + intToStr2.apply(44));
 
         //to samo co wyżej tylko jeszcze krócej :) - odwołanie się do metod
@@ -88,7 +88,7 @@ public class Samples {
         integerConsumer1.accept(10);
 
         //to samo co wyżej tylko krócej
-        Consumer<Integer> integerConsumer2 = (Integer n) -> System.out.println(n * n);
+        Consumer<Integer> integerConsumer2 = (n) -> System.out.println(n * n);
         System.out.println("integerConsumer2.accept()");
         integerConsumer2.accept(10);
 
@@ -116,13 +116,21 @@ public class Samples {
         nickNames.put("Marcin", "Cinek");
         nickNames.put("Jarosław", "Jaro");
 
-        //nickNames.forEach(biConsumer);
-        nickNames.forEach((name, nickname) -> System.out.printf("Ksywka dla %s to %s%n", name, nickname));
+//        nickNames.forEach((name, nickname) -> System.out.printf("Ksywka dla %s to %s%n", name, nickname));
+        nickNames.forEach(biConsumer);
 
         //**********
         // Własny interface
-        Checker personChecker = (person) -> person != null && person.getName() != null;
-        System.out.println("personChecker.test() = " + personChecker.checkIt(new Person(0, "Jarek")));
+        Checker personChecker = (person) -> {
+            return person != null && person.getName() != null;
+        };
+        System.out.println("personChecker.test() = " + personChecker.checkIt(null));
+
+        List<Person> people = Arrays.asList(null, new Person(10, "Jarek"), new Person(20, null));
+        List<Person> collect = people.stream()
+                .filter(personChecker::checkIt)
+                .collect(Collectors.toList());
+        System.out.println(collect);
     }
 
     private static void streamsSources() {

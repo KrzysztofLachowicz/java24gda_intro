@@ -18,22 +18,40 @@ public class LambdaExample {
 
         students.forEach(System.out::println);
 
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        Integer result = numbers.stream().reduce(0, (a, b) -> a + b);
+//        Integer result = numbers.stream().reduce(0, Integer::sum); // dokładnie to samo co wyżej
+        System.out.println(result);
+        // 1 -> 0, (0, 1) -> 0 + 1
+        // 2 -> 1, (1, 2) -> 1 + 2
+        // 3 -> 3, (3, 3) -> 3 + 3
+        // 4 -> 6, (6, 4) -> 6 + 4
+        // 5 -> 10, (10, 5) -> 10 + 5
+        // =15
+
         String reduce = students.stream()
             .map(Person::getFirstName)
-            .reduce("", (s1, s2) -> s1 + s2);
+//            .map(Student::getFirstName)
+//            .map(student -> student.getFirstName()) // List<String> imiona
+            .reduce("First names: ", (string1, string2) -> {
+                // ...
+                return string1 + ", " + string2;
+            });
         System.out.println(reduce);
 
         List<Student> processedList = students.stream()
-            .filter(student -> "Jan".equals(student.getFirstName()))
+            .filter(student -> "Jan".equals(student.getFirstName())) // List<Student> (2)
             .map(student -> {
                 System.out.println(student);
                 return new Student(
                     student.getFirstName().toUpperCase(),
                     student.getLastName().toUpperCase()
                 );
-            })
-            .sorted(Comparator.comparing(Person::getLastName))
-            .collect(Collectors.toList());
+            }) // List<Student> (2) ale imiona i nazwiska pisane są wielką literą
+            .sorted(Comparator.comparing(Person::getLastName)) // sortujemy wynik działania funkcji map po nazwisku
+            .collect(Collectors.toList()); // zbieramy wyniki do nowej kolekcji List
+
+        System.out.println(processedList.isEmpty());
 
         if (!processedList.isEmpty()) {
             processedList.forEach(System.out::println);

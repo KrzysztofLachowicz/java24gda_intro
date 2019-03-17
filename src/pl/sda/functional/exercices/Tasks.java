@@ -7,6 +7,9 @@ public class Tasks {
         useLambdas();
 
         //#2
+        useOptional();
+
+        //#3
         useStreams();
     }
 
@@ -21,7 +24,19 @@ public class Tasks {
     }
 
     /**
-     * 2. Utwórz i użyj strumień danych (Stream):
+     * 2. Utwórz obiekt Optional, który:
+     * - nie będzie zawierał żadnej wartości (Optional.empty)
+     * - będzie pozwalał przyjmować wartość typu String, która może być `null` (Optional.ofNullable)
+     * - rzuci wyjątkiem, w momencie podania wartości null typu Float (Optional.of)
+     * - rzuci własny wyjątek, jeśli podano wartość `null` i próbowano pobrać wartość (Optional.orElseThrow)
+     * - zwróci wartość domyślną dla typu String jeśli podano wartość `null` (Optional.orElse)
+     */
+    private static void useOptional() {
+    }
+
+
+    /**
+     * 3. Utwórz i użyj strumień danych (Stream):
      * - utwórz stream liczb typu Double z kolekcji typu Set - podaj ich sumę i średnią arytmetyczną
      * - utwórz stream liczb całkowitych od 10 do 40, usuń parzyste i podaj sumę pozostałych
      * - utwórz stream obiektów typu String, zamień wszystkie litery na małe, zostaw tylko te które zaczynają się na literę 'a' lub 'z'
