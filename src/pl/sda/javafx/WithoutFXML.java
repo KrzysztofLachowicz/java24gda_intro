@@ -21,7 +21,8 @@ public class WithoutFXML extends Application {
     @Override
     public void start(Stage primaryStage) {
         Button button = new Button("Hello world!");
-        Text text = new Text("Click the button to change label");
+        Text text = new Text("Click the button to change label\nABC");
+        text.setFont(new Font(24));
 
         button.setOnAction(e -> text.setText("Button was clicked!"));
 
@@ -30,6 +31,7 @@ public class WithoutFXML extends Application {
         ObjectProperty<Font> fontProperty = label.fontProperty();
         fontProperty.setValue(new Font(24));
         textField.setOnAction(e -> label.setText(textField.getText()));
+        textField.setFont(new Font(24));
 
         VBox box = new VBox();
         ObservableList<Node> children = box.getChildren();

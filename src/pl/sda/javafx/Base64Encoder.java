@@ -41,10 +41,10 @@ public class Base64Encoder extends Application {
         primaryStage.show();
     }
 
-    private void encode(TextArea textField1, TextArea textField2) {
-        String value = textField1.getText();
+    private void encode(TextArea textArea1, TextArea textArea2) {
+        String value = textArea1.getText();
         String encoded = Base64.getEncoder().encodeToString(value.getBytes());
-        textField2.setText(encoded);
+        textArea2.setText(encoded);
 
         ClipboardContent clipboardContent = new ClipboardContent();
         clipboardContent.putString(encoded);

@@ -16,6 +16,7 @@ public class CalculatorSwingExample extends JPanel implements ActionListener {
     public CalculatorSwingExample() {
         setLayout(new BorderLayout());
 
+        display.setFont(new Font("Arial", Font.BOLD, 24));
         display.setEditable(false);
         add(display, "North");
 
@@ -31,6 +32,7 @@ public class CalculatorSwingExample extends JPanel implements ActionListener {
         add(panel, "Center");
     }
 
+    @Override
     public void actionPerformed(ActionEvent evt) {
         String cmd = evt.getActionCommand();
         if ('0' <= cmd.charAt(0) && cmd.charAt(0) <= '9' || cmd.equals(".")) {
