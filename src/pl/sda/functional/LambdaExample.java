@@ -32,7 +32,7 @@ public class LambdaExample {
                     student.getLastName().toUpperCase()
                 );
             })
-            .sorted(Comparator.comparing(Person::getFirstName))
+            .sorted(Comparator.comparing(Person::getLastName))
             .collect(Collectors.toList());
 
         if (!processedList.isEmpty()) {
