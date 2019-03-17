@@ -4,7 +4,6 @@ import pl.sda.generics.Person;
 import pl.sda.generics.Student;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +16,7 @@ public class LambdaExample {
                 new Student("Jan", "Nowak")
         );
 
-        printLambda(students);
+        students.forEach(System.out::println);
 
         String reduce = students.stream()
             .map(Person::getFirstName)
@@ -39,9 +38,5 @@ public class LambdaExample {
         if (!processedList.isEmpty()) {
             processedList.forEach(System.out::println);
         }
-    }
-
-    private static void printLambda(Collection collection) {
-        collection.forEach(System.out::println);
     }
 }
