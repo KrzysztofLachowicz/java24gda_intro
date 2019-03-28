@@ -14,7 +14,7 @@ public class ThreadRunner {
         customThread();
 
 //        // #2
-        runnable();
+        customRunnable();
 //
 //        // #3
         executorService();
@@ -38,7 +38,7 @@ public class ThreadRunner {
         System.out.println("Done!");
     }
 
-    private static void runnable() {
+    private static void customRunnable() {
         System.out.println("Start CustomRunnable!");
 
         CustomRunnable customRunnable = new CustomRunnable();
@@ -53,7 +53,7 @@ public class ThreadRunner {
     }
 
     private static void executorService() throws InterruptedException {
-//        System.out.println("Threads: " + Runtime.getRuntime().availableProcessors());
+        System.out.println("Threads: " + Runtime.getRuntime().availableProcessors());
 
         long start = System.currentTimeMillis();
         System.out.println("Start ExecutorService!");

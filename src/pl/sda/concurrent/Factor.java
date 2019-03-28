@@ -27,7 +27,7 @@ public class Factor implements Runnable {
         if (0 == num) {
             return factorial;
         }
-        for (int i = 1; i <= num; i++) {
+        for (int i = 2; i <= num; i++) {
             factorial = factorial.multiply(BigInteger.valueOf(i));
         }
         return factorial;
