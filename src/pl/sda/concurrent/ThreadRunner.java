@@ -14,16 +14,16 @@ public class ThreadRunner {
         customThread();
 
 //        // #2
-        customRunnable();
+//        customRunnable();
 //
 //        // #3
-        executorService();
+//        executorService();
 //
 //        // #4
-        standardWay();
-
-        // #5
-        factor(10);
+//        standardWay();
+//
+//        // #5
+//        factor(10);
     }
 
     private static void customThread() {
@@ -58,7 +58,7 @@ public class ThreadRunner {
         long start = System.currentTimeMillis();
         System.out.println("Start ExecutorService!");
 
-        ExecutorService executorService = Executors.newFixedThreadPool(8);
+        ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         for (int i = 1; i <= FACTOR_OF; i++) {
             executorService.execute(new Factor(i));
         }
