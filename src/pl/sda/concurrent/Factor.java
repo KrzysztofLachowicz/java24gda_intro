@@ -19,7 +19,7 @@ public class Factor implements Runnable {
 //        System.out.println("Factor of: " + num + " = " + factor);
 
 //        long end = System.currentTimeMillis();
-//        System.out.println("Time: " + (end - start) + " ms");
+//        System.out.println("Time (" + num + "): " + (end - start) + " ms");
     }
 
     private BigInteger factorOf() {
