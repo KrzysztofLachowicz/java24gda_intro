@@ -30,5 +30,6 @@ public class StringTest {
         StringBuilder stringBuilder = new StringBuilder("Hello");
         stringBuilder.append(" ").append("World ").append(10);
         String string1 = stringBuilder.toString();
+        System.out.println("string1: " + string1);
     }
 }
